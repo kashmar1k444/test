@@ -3,10 +3,12 @@
 import GiftGrid from './components/GiftGrid.vue';
 import Navigation from './components/Navigation.vue';
 import ShareBtn from './components/ShareBtn.vue';
+import Loader from './components/Loader.vue'
 
 import {ref, onMounted, watch} from 'vue';
 
-let gifs : Array<any> = ref([]);
+let loaded : boolean = ref(false);
+let gifs : any = ref([]);
 let searchReq : any = ref('');
 let timer : any = null;
 let page : any = ref(1);
@@ -74,6 +76,7 @@ const getDataByPage = async () =>{
 onMounted(async () => {
     const res = await getData(url.value)
     gifs.value = res.data;
+    setTimeout(() => loaded.value = true, 200)
 })
 
 watch(searchReq , () => {
@@ -86,9 +89,13 @@ watch(searchReq , () => {
   <Navigation 
     v-model="searchReq"
   />
-  <GiftGrid
-    :gifs="gifs"
-  />
+  <div class="gifs-wrapper">
+    <Loader v-if="!loaded"/>
+    <GiftGrid 
+      v-else
+      :gifs="gifs"
+    />
+  </div>
   <v-pagination 
       :length="pagesCount" 
       v-model="page"

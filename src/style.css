@@ -26,6 +26,10 @@ header{
   padding: 10px 0;
 }
 
+.header-logo img{
+  max-width: 300px;
+}
+
 .v-pagination .v-btn{
   color: #fff;
 }
@@ -37,8 +41,8 @@ video{
 
 .share-btn{
   position: fixed !important;
-  right: 40px;
-  bottom: 40px;
+  left: 40px;
+  bottom: 120px;
   z-index: 10;
   color: #fff;
 }
