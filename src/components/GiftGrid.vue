@@ -1,6 +1,6 @@
 <script setup lang="ts">
     defineProps<{
-        gifs: Array<object> 
+        gifs: any 
     }>()
 </script>
 

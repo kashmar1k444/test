@@ -2,15 +2,8 @@
 
 import {ref} from 'vue'
 
-let isSuported : boolean = ref(false);
-const text: string = ref('web share api');
-const url: string = ref('https://developers.giphy.com/docs/api/endpoint#get-gif-by-id');
-
-const isSupport = () => {
-    if (navigator.share) {
-        isSuported.value = true;
-    }
-}
+const text: any = ref('web share api');
+const url: any = ref('https://developers.giphy.com/docs/api/endpoint#get-gif-by-id');
 
 const webShare = () => {
     navigator.share({
@@ -18,8 +11,6 @@ const webShare = () => {
         url: url.value
       })
 }
-
-isSupport();
 
 </script>
 

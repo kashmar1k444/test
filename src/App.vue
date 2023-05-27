@@ -7,13 +7,13 @@ import Loader from './components/Loader.vue'
 
 import {ref, onMounted, watch} from 'vue';
 
-let loaded : boolean = ref(false);
+let loaded : any = ref(false);
 let gifs : any = ref([]);
 let searchReq : any = ref('');
 let timer : any = null;
 let page : any = ref(1);
 
-const options : object = ref({
+const options : any = ref({
   limit: 12,
   rating: 'g',
   apiKey: 'h5ZgTXD2yCiVAG6D55Wnhc3HoHX4ukvR',
