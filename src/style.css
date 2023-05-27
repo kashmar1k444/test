@@ -1,0 +1,48 @@
+body{
+  background: #333;
+}
+
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+  transition: all .5s ease;  
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: .4;
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.list-leave-active {
+    position: absolute;
+    opacity: 0;
+}
+
+header{
+  background: #000 !important;
+  color: #fff !important;
+  padding: 10px 0;
+}
+
+.v-pagination .v-btn{
+  color: #fff;
+}
+
+video{
+    width: 100%;
+    height: 100%;
+}
+
+.share-btn{
+  position: fixed !important;
+  right: 40px;
+  bottom: 40px;
+  z-index: 10;
+  color: #fff;
+}
+
+body{
+  padding-bottom: 40px;
+}
